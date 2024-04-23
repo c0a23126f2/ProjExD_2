@@ -13,8 +13,8 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def gameover():
     fonto = pg.font.Font(None,80)
-    kon = pg.image.load("fig/8.png")
-    txt = fonto.render("Game over",True,(0,0,0))
+    kon = pg.image.load("fig/8.png")#こうかとんの画像
+    txt = fonto.render("Game over",True,(0,0,0)) #Gameoverを表示させる
     return txt
 
 
@@ -57,11 +57,11 @@ def main():
                 return
         if kk_rct.colliderect(bd_rct): # こうかとんと爆弾がぶつかった
             print("Game Over")
-            koa = pg.Surface((1600,900))
+            koa = pg.Surface((1600,900)) #暗転
             pg.draw.rect(koa,(0,0,0),(0,0,1000,600))
-            koa.set_alpha(200)
-            screen.blit(koa, [0,0])
-            screen.blit(txt, [400,270])
+            koa.set_alpha(200) #半透明
+            screen.blit(koa, [0,0]) #暗転を描画
+            screen.blit(txt, [400,270]) #以下こうかとん描画
             screen.blit(kon, [700,270])
             screen.blit(kon, [350,270])
             pg.display.update()
