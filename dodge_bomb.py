@@ -38,6 +38,9 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
+        if kk_rct.colliderect(bd_rct):
+            print("Game Over")
+            return
         screen.blit(bg_img, [0, 0]) 
 
         key_lst = pg.key.get_pressed()
@@ -46,14 +49,6 @@ def main():
             if key_lst[k]:
                 sum_mv[0] += v[0]
                 sum_mv[1] += v[1]
-        #if key_lst[pg.K_UP]:
-        #    sum_mv[1] -= 5
-        #if key_lst[pg.K_DOWN]:
-        #    sum_mv[1] += 5
-        #if key_lst[pg.K_LEFT]:
-        #    sum_mv[0] -= 5
-        #if key_lst[pg.K_RIGHT]:
-        #    sum_mv[0] += 5
         kk_rct.move_ip(sum_mv)
         if check_bound(kk_rct) != (True,True):
             kk_rct.move_ip(-sum_mv[0],-sum_mv[1])
