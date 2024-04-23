@@ -11,7 +11,7 @@ delta = { # 移動量辞書（押下キー：移動量タプル）
     pg.K_UP:(0,-5),pg.K_DOWN:(0,+5),pg.K_LEFT:(-5,0),pg.K_RIGHT:(+5,0),}
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-def gameover():
+def gameover(): #爆弾に当たった後、Gameoverの表示
     fonto = pg.font.Font(None,80)
     kon = pg.image.load("fig/8.png")#こうかとんの画像
     txt = fonto.render("Game over",True,(0,0,0)) #Gameoverを表示させる
